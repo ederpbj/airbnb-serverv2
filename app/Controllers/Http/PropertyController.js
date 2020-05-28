@@ -34,8 +34,27 @@ class PropertyController {
   nesse método (mais tarde iremos buscar apenas imóveis
     próximos baseados na localização do usuário).
   */
-  async index () {
+//  Retorna todos os imóveis
+  /* async index () {
     const properties = Property.all()
+
+    return properties
+  } */
+
+  // Retorna apénas imóveis próximos
+  /*
+  O que estamos fazendo aqui é buscar os
+  dados de latitude e longitude do corpo da
+  nossa requisição (que serão enviados através
+  do front-end depois) e utilizando nosso
+  método nearBy para buscar apenas imóveis
+  com no máximo 10km de distância */
+  async index ({ request }) {
+    const { latitude, longitude } = request.all()
+
+    const properties = Property.query()
+      .nearBy(latitude, longitude, 10)
+      .fetch()
 
     return properties
   }
@@ -71,10 +90,24 @@ destroy: Remover um registro; */
    * @param {Request} ctx.request
    * @param {Response} ctx.response
    */
-  // Criar novo registro;
-  async store ({ request, response }) {
-  }
+  // Criar novo registro, Propriedade;
+  // async store ({ request, response }) { }
+  async store ({ auth, request, response }) {
+    // ID do usuário logado através do objeto auth embutido
+    // automaticamente em todos métodos dos controllers
+    const { id } = auth.user
+    const data = request.only([
+      'title',
+      'address',
+      'latitude',
+      'longitude',
+      'price'
+    ])
 
+    const property = await Property.create({ ...data, user_id: id })
+
+    return property
+  }
   /**
    * Display a single property.
    * GET properties/:id
@@ -114,7 +147,24 @@ destroy: Remover um registro; */
    * @param {Response} ctx.response
    */
   // Alterar um registro;
+  // async update ({ params, request, response }) { }
   async update ({ params, request, response }) {
+    // Busca pelo ID
+    const property = await Property.findOrFail(params.id)
+
+    const data = request.only([
+      'title',
+      'address',
+      'latitude',
+      'longitude',
+      'price'
+    ])
+
+    property.merge(data)
+
+    await property.save()
+
+    return property
   }
 
   /**
