@@ -30,6 +30,8 @@ adonis migration:run
 
 [Iniciando com adonis](https://www.youtube.com/watch?v=aysgHRmzG3w&list=PL85ITvJ7FLoh7QBmTVzuNYvZaYPYwDmei)
 
+[Imagens Grátis](https://www.pexels.com/)
+
 ## Projeto back-end adonis
 
 1. **WHY THE :house: :fish:** there
@@ -42,7 +44,7 @@ adonis migration:run
 
 ## COMANDOS
 
-| Descrição            | Comando                                      |
+| Descrição      | Comando                                |
 | -------------------- | -------------------------------------------- |
 | Instalação Adonis    | `https://adonisjs.com/docs/4.1/installation` |
 | Adonis cliente       | `npm i -g @adonisjs/cli`                     |
@@ -64,14 +66,14 @@ adonis migration:run
 
 ### Atualizações
 
-| Descrição       | Comando                           |
-| ---------------------------------------------- | ------------------------------------------------------------------- |
-| Corrigindo erro                                | Conexão com DB                                                      |
-| algumas ferramentas de build (Python incluído) | `npm install --global --production windows-build-tools`             |
-| remover o node e reinstalar                    | `rm -rf node_modules && npm install`                                |
-| Atualizando                                    | `npm install -g npm-check`                                          |
-| Atualizando                                    | `npm-check -u`                                                      |
-| Api                                            | `git clone --dissociate https://github.com/adonisjs/adonis-api-app` |
+ Descrição | Comando 
+ ----------- | -------
+ Corrigindo erro   | Conexão com DB 
+ algumas ferramentas de build (Python incluído) | `npm install --global --production windows-build-tools`
+ remover o node e reinstalar   | `rm -rf node_modules && npm install`
+ Atualizando  | `npm install -g npm-check`
+ Atualizando  | `npm-check -u`                              |
+ Api    | `git clone --dissociate https://github.com/adonisjs/adonis-api-app`
 
 You installed mysql server using "mysql installer"
 
@@ -90,11 +92,14 @@ You installed mysql server using "mysql installer"
 
 Descrição | Comando
 ----|----
-criar model, migration e controller | adonis make:model Property -m -c
-criar migration no DB de Property | adonis migration:run
+criar model, migration e controller | `adonis make:model Property -m -c`
+criar migration no DB de Property | `adonis migration:run`
+Tabela que armazena as imagens | `adonis make:model Image -m`
+criar migration no DB de Property | `adonis migration:run`
+
+[Parte 3: Upload de imagens e geolocalização no AdonisJS;](https://blog.rocketseat.com.br/adonis-upload-geolocalizacao/)
 
 
-Parte 3: Upload de imagens e geolocalização no AdonisJS;
 
 Parte 4: Iniciando com React Native: Navegação e Autenticação com JWT;
 

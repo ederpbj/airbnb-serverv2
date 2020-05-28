@@ -1,4 +1,14 @@
 'use strict'
+/*
+Criando CRUD
+Agora vamos botar a mão na massa, se você não
+conhece o termo CRUD, é uma sigla para (Create,
+  Read, Update, Detele), ou seja, operações básicas
+  em um model. No controller de imóveis adicione a
+  seguinte linha logo após a notação 'use strict'
+  para termos acesso ao model de imóvel dentro do código:
+*/
+const Property = use('App/Models/Property')
 
 /** @typedef {import('@adonisjs/framework/src/Request')} Request */
 /** @typedef {import('@adonisjs/framework/src/Response')} Response */
@@ -17,7 +27,17 @@ class PropertyController {
    * @param {Response} ctx.response
    * @param {View} ctx.view
    */
-  async index ({ request, response, view }) {
+  // Listar todos registros;
+  // async index ({ request, response, view }) { }
+  /*
+  Por enquanto vamos apenas retornar todos os imóveis
+  nesse método (mais tarde iremos buscar apenas imóveis
+    próximos baseados na localização do usuário).
+  */
+  async index () {
+    const properties = Property.all()
+
+    return properties
   }
 
   /**
@@ -29,8 +49,19 @@ class PropertyController {
    * @param {Response} ctx.response
    * @param {View} ctx.view
    */
-  async create ({ request, response, view }) {
-  }
+
+ /*  servem apenas para exibir os formulários de criação
+  e edição respectivamente, os quais não existem em uma API */
+  // async create ({ request, response, view }) {}
+  // async edit ({ params, request, response, view }) {}
+
+  /* Cada método que sobrou tem uma responsabilidade:
+
+index: Listar todos registros;
+show: Exibir um registro;
+store: Criar novo registro;
+update: Alterar um registro;
+destroy: Remover um registro; */
 
   /**
    * Create/save a new property.
@@ -40,6 +71,7 @@ class PropertyController {
    * @param {Request} ctx.request
    * @param {Response} ctx.response
    */
+  // Criar novo registro;
   async store ({ request, response }) {
   }
 
@@ -52,7 +84,14 @@ class PropertyController {
    * @param {Response} ctx.response
    * @param {View} ctx.view
    */
-  async show ({ params, request, response, view }) {
+  // Exibir um registro;
+  // async show ({ params, request, response, view }) { }
+  async show ({ params }) {
+    const property = await Property.findOrFail(params.id)
+
+    await property.load('images')
+
+    return property
   }
 
   /**
@@ -64,8 +103,7 @@ class PropertyController {
    * @param {Response} ctx.response
    * @param {View} ctx.view
    */
-  async edit ({ params, request, response, view }) {
-  }
+  // async edit ({ params, request, response, view }) {}
 
   /**
    * Update property details.
@@ -75,6 +113,7 @@ class PropertyController {
    * @param {Request} ctx.request
    * @param {Response} ctx.response
    */
+  // Alterar um registro;
   async update ({ params, request, response }) {
   }
 
@@ -86,7 +125,16 @@ class PropertyController {
    * @param {Request} ctx.request
    * @param {Response} ctx.response
    */
-  async destroy ({ params, request, response }) {
+  // Remover um registro; junto com suas imagens
+  // async destroy ({ params, request, response }) { }
+  async destroy ({ params, auth, response }) {
+    const property = await Property.findOrFail(params.id)
+
+    if (property.user_id !== auth.user.id) {
+      return response.status(401).send({ error: 'Not authorized' })
+    }
+
+    await property.delete()
   }
 }
 
