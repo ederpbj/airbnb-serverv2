@@ -34,34 +34,6 @@ adonis migration:run
 
 1. **WHY THE :house: :fish:** there
 
-
-
-
-### Atualizações
-
-| Descrição                                      | Comando                                                             |
-| ---------------------------------------------- | ------------------------------------------------------------------- |
-| Corrigindo erro                                | Conexão com DB                                                      |
-| algumas ferramentas de build (Python incluído) | `npm install --global --production windows-build-tools`             |
-| remover o node e reinstalar                    | `rm -rf node_modules && npm install`                                |
-| Atualizando                                    | `npm install -g npm-check`                                          |
-| Atualizando                                    | `npm-check -u`                                                      |
-| Api                                            | `git clone --dissociate https://github.com/adonisjs/adonis-api-app` |
-
-You installed mysql server using "mysql installer"
-
-### Erro DB resolvido
-
-1)open -> "mysql intsaller"
-
-2)press reconfig mysql server
-
-3)select left side "authentication method tab"
-
-4)select radio button -->use legacy authentication method
-
-5)now stop and restart the db
-
 ## Aulas
 
 [Documentação Adonis](https://adonisjs.com/docs/4.0/lucid#_introduction)
@@ -88,6 +60,30 @@ You installed mysql server using "mysql installer"
 | Iniciando Autenticação com JWT | `adonis make:controller User --type http` |
 | criar um novo controller para autenticação (sessão) | `adonis make:controller Session --type http` |
 
+### Erro DB resolvido
+
+### Atualizações
+
+| Descrição                                      | Comando                                                             |
+| ---------------------------------------------- | ------------------------------------------------------------------- |
+| Corrigindo erro                                | Conexão com DB                                                      |
+| algumas ferramentas de build (Python incluído) | `npm install --global --production windows-build-tools`             |
+| remover o node e reinstalar                    | `rm -rf node_modules && npm install`                                |
+| Atualizando                                    | `npm install -g npm-check`                                          |
+| Atualizando                                    | `npm-check -u`                                                      |
+| Api                                            | `git clone --dissociate https://github.com/adonisjs/adonis-api-app` |
+
+You installed mysql server using "mysql installer"
+
+1)open -> "mysql intsaller"
+
+2)press reconfig mysql server
+
+3)select left side "authentication method tab"
+
+4)select radio button -->use legacy authentication method
+
+5)now stop and restart the db
 
 [Parte 2: Criando CRUD e relações em API REST no AdonisJS](https://blog.rocketseat.com.br/crud-api-rest-adonis/);
 
