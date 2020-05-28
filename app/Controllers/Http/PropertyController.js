@@ -53,6 +53,9 @@ class PropertyController {
     const { latitude, longitude } = request.all()
 
     const properties = Property.query()
+    //  mostrar as imagens do imóvel no método
+    // realiza um processo de Eager Loading nas imagens adicionando-as ao retorno de cada imóvel.
+      .with('images')
       .nearBy(latitude, longitude, 10)
       .fetch()
 

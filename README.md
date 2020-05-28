@@ -4,6 +4,8 @@
 
 Projeto back-end para airbnb front em react
 
+[Git-Origin](https://github.com/Rocketseat/blog-adonis-reactjs-react-native-airbnb)
+
 ## Setup
 
 Use the adonis command to install the blueprint
@@ -96,6 +98,7 @@ criar model, migration e controller | `adonis make:model Property -m -c`
 criar migration no DB de Property | `adonis migration:run`
 Tabela que armazena as imagens | `adonis make:model Image -m`
 criar migration no DB de Property | `adonis migration:run`
+Criar controller Image | `adonis make:controller Image --type http`
 
 [Parte 3: Upload de imagens e geolocalização no AdonisJS;](https://blog.rocketseat.com.br/adonis-upload-geolocalizacao/)
 
