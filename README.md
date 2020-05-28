@@ -90,8 +90,8 @@ You installed mysql server using "mysql installer"
 
 Descrição | Comando
 ----|----
-criar model, migration e controller | `adonis make:model Property -m -c`
-criar migration no DB de Property | `adonis migration:run`
+criar model, migration e controller | adonis make:model Property -m -c
+criar migration no DB de Property | adonis migration:run
 
 
 Parte 3: Upload de imagens e geolocalização no AdonisJS;
