@@ -28,11 +28,7 @@ adonis migration:run
 
 ## Projeto back-end adonis
 
-7. **WHY THE :fish:** there
-
-[Documentação Adonis](https://adonisjs.com/docs/4.0/lucid#_introduction)
-
-[Parte 1: Iniciando com AdonisJS: Autenticação JWT e API REST;](https://blog.rocketseat.com.br/adonis-auth-jwt-api-rest/)
+1. **WHY THE :car:** there
 
 ## COMANDOS
 
@@ -76,6 +72,12 @@ You installed mysql server using "mysql installer"
 4)select radio button -->use legacy authentication method
 
 5)now stop and restart the db
+
+## Aulas
+
+[Documentação Adonis](https://adonisjs.com/docs/4.0/lucid#_introduction)
+
+[Parte 1: Iniciando com AdonisJS: Autenticação JWT e API REST;](https://blog.rocketseat.com.br/adonis-auth-jwt-api-rest/)
 
 Parte 2: Criando CRUD e relações em API REST no AdonisJS;
 
