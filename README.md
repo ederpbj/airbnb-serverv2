@@ -34,25 +34,8 @@ adonis migration:run
 
 1. **WHY THE :house: :fish:** there
 
-## COMANDOS
 
-| Descrição            | Comando                                      |
-| -------------------- | -------------------------------------------- |
-| Instalação Adonis    | `https://adonisjs.com/docs/4.1/installation` |
-| Adonis cliente       | `npm i -g @adonisjs/cli`                     |
-| Adonis cli           | `npm install --global @adonisjs/cli`         |
-| Iniciar novo projeto | `adonis new airbnb-server --api-only`        |
-| Rodar em modo dev    | `adonis serve --dev`                         |
-| Instalar DB mysql    | `npm install mysql --save`                   |
-| PostgreSQL           | `npm install pg`                             |
-| SQLite               | `npm install sqlite3`                        |
-| SQLite3              | `npm install sqlite3 --save`                 |
-| Erro em migrate      | `npm i @adonisjs/lucid`                      |
-| Migrar o DB          | `adonis migration:run`                       |
-| Criar tabela no db   | `adonis make:model Cliente -m -c`            |
-| Migra para DB        | `adonis migration:run`                       |
-| Iniciando Autenticação com JWT | `adonis make:controller User --type http` |
-| criar um novo controller para autenticação (sessão) | `adonis make:controller Session --type http` |
+
 
 ### Atualizações
 
@@ -85,7 +68,32 @@ You installed mysql server using "mysql installer"
 
 [Parte 1: Iniciando com AdonisJS: Autenticação JWT e API REST;](https://blog.rocketseat.com.br/adonis-auth-jwt-api-rest/)
 
-Parte 2: Criando CRUD e relações em API REST no AdonisJS;
+## COMANDOS
+
+| Descrição            | Comando                                      |
+| -------------------- | -------------------------------------------- |
+| Instalação Adonis    | `https://adonisjs.com/docs/4.1/installation` |
+| Adonis cliente       | `npm i -g @adonisjs/cli`                     |
+| Adonis cli           | `npm install --global @adonisjs/cli`         |
+| Iniciar novo projeto | `adonis new airbnb-server --api-only`        |
+| Rodar em modo dev    | `adonis serve --dev`                         |
+| Instalar DB mysql    | `npm install mysql --save`                   |
+| PostgreSQL           | `npm install pg`                             |
+| SQLite               | `npm install sqlite3`                        |
+| SQLite3              | `npm install sqlite3 --save`                 |
+| Erro em migrate      | `npm i @adonisjs/lucid`                      |
+| Migrar o DB          | `adonis migration:run`                       |
+| Criar tabela no db   | `adonis make:model Cliente -m -c`            |
+| Migra para DB        | `adonis migration:run`                       |
+| Iniciando Autenticação com JWT | `adonis make:controller User --type http` |
+| criar um novo controller para autenticação (sessão) | `adonis make:controller Session --type http` |
+
+
+[Parte 2: Criando CRUD e relações em API REST no AdonisJS](https://blog.rocketseat.com.br/crud-api-rest-adonis/);
+
+Descrição | Comando
+criar model, migration e controller | `adonis make:model Property -m -c`
+criar migration no DB de Property | `adonis migration:run`
 
 Parte 3: Upload de imagens e geolocalização no AdonisJS;
 
