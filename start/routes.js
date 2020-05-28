@@ -20,5 +20,13 @@ Route.get('/', () => {
   return { greeting: 'Hello world in JSON' }
 })
 
-// rota que aceita o método POST no endereço /users e chama o método create no controller UserController
+/* rota que aceita o método POST no endereço /users
+e chama o método create no controller UserController */
+
 Route.post('/users', 'UserController.create')
+
+/* Enviando essa requisição agora teremos acesso
+ao token JWT que servirá para validarmos se o
+usuário está autenticado ou não em nosso app. */
+
+Route.post('/sessions', 'SessionController.create')

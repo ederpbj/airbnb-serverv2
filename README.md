@@ -52,8 +52,7 @@ adonis migration:run
 | Criar tabela no db   | `adonis make:model Cliente -m -c`            |
 | Migra para DB        | `adonis migration:run`                       |
 | Iniciando Autenticação com JWT | `adonis make:controller User --type http` |
-| criar um novo controller para lidar 
-apenas com a autenticação (sessão) | `adonis make:controller Session --type http` |
+| criar um novo controller para autenticação (sessão) | `adonis make:controller Session --type http` |
 
 ### Atualizações
 
