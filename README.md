@@ -64,7 +64,7 @@ adonis migration:run
 
 ### Atualizações
 
-| Descrição                                      | Comando                                                             |
+| Descrição       | Comando                           |
 | ---------------------------------------------- | ------------------------------------------------------------------- |
 | Corrigindo erro                                | Conexão com DB                                                      |
 | algumas ferramentas de build (Python incluído) | `npm install --global --production windows-build-tools`             |
@@ -87,9 +87,12 @@ You installed mysql server using "mysql installer"
 
 [Parte 2: Criando CRUD e relações em API REST no AdonisJS](https://blog.rocketseat.com.br/crud-api-rest-adonis/);
 
+
 Descrição | Comando
+----|----
 criar model, migration e controller | `adonis make:model Property -m -c`
 criar migration no DB de Property | `adonis migration:run`
+
 
 Parte 3: Upload de imagens e geolocalização no AdonisJS;
 
