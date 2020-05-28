@@ -19,3 +19,6 @@ const Route = use('Route')
 Route.get('/', () => {
   return { greeting: 'Hello world in JSON' }
 })
+
+// rota que aceita o método POST no endereço /users e chama o método create no controller UserController
+Route.post('/users', 'UserController.create')

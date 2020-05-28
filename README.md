@@ -1,5 +1,9 @@
 # Adonis API application
 
+## Descrição
+
+Projeto back-end para airbnb front em react
+
 ## Setup
 
 Use the adonis command to install the blueprint
@@ -28,7 +32,7 @@ adonis migration:run
 
 ## Projeto back-end adonis
 
-1. **WHY THE :car:** there
+1. **WHY THE :house: :fish:** there
 
 ## COMANDOS
 
@@ -47,6 +51,7 @@ adonis migration:run
 | Migrar o DB          | `adonis migration:run`                       |
 | Criar tabela no db   | `adonis make:model Cliente -m -c`            |
 | Migra para DB        | `adonis migration:run`                       |
+| Iniciando Autenticação com JWT | `adonis make:controller User --type http` |
 
 ### Atualizações
 
