@@ -15,6 +15,16 @@ class UserController {
     // Retornamos o novo usuário como resultado da requisição, como selecionamos, no nosso caso o retorno será um JSON.
     return user
   }
+// Teste excluir
+  async destroy ({ params, auth, response }) {
+    const user = await User.findOrFail(params.id)
+
+    if (user.user_id !== auth.user.id) {
+      return response.status(401).send({ error: 'Not authorized' })
+    }
+
+    await property.delete()
+  }
 }
 
 module.exports = UserController

@@ -16,11 +16,11 @@
 /** @type {typeof import('@adonisjs/framework/src/Route/Manager')} */
 const Route = use('Route')
 
-/* Rota raiz
+// Rota raiz
 Route.get('/', () => {
   return { greeting: 'Hello world in JSON' }
 })
- */
+
 
 /* rota que aceita o método POST no endereço /users
 e chama o método create no controller UserController */
@@ -50,3 +50,4 @@ Route.post('properties/:id/images', 'ImageController.store')
 
 // Exibir imagens
 Route.get('images/:path', 'ImageController.show')
+Route.post('properties/:id/images', 'ImageController.store').middleware('auth')
